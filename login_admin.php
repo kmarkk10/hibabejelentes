@@ -5,8 +5,10 @@ if ($conn->connect_error) {
     die("Kapcsolódási hiba: " . $conn->connect_error);
 }
 
-if (isset($_COOKIE["loggedin"]) && $_COOKIE["loggedin"] === "1") {
-    header("Location: admin.php");
+
+if (!isset($_COOKIE["loggedin"])
+    || !isset($_COOKIE["pozicio"]) || $_COOKIE["pozicio"] == "admin") {
+    header("Location: login_admin.php");
     exit;
 }
 
