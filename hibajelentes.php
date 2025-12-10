@@ -1,4 +1,10 @@
 <?php
+if (!isset($_COOKIE["loggedin"])) {
+    header("Location: login_admin.php");
+    exit;
+}
+
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $conn = new mysqli("localhost", "root", "", "hibajegyek");
