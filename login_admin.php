@@ -6,12 +6,6 @@ if ($conn->connect_error) {
 }
 
 
-if (!isset($_COOKIE["loggedin"])
-    || !isset($_COOKIE["pozicio"]) || $_COOKIE["pozicio"] == "admin") {
-    header("Location: login_admin.php");
-    exit;
-}
-
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = $_POST["username"] ?? "";
     $pass = $_POST["password"] ?? "";
