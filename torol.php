@@ -1,5 +1,5 @@
 <?php
-if (!isset($_COOKIE["loggedin"])) {
+if (!isset($_SESSION['loggedin']) || $_SESSION['pozicio'] !== 'admin') {
     header("Location: login_admin.php");
     exit;
 }

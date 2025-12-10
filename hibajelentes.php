@@ -1,6 +1,7 @@
 <?php
-if (!isset($_COOKIE["loggedin"])) {
-    header("Location: login_admin.php");
+
+if (!isset($_SESSION['loggedin'])) {
+    header("Location: login_tanar.php");
     exit;
 }
 

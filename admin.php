@@ -1,7 +1,6 @@
 <?php
 
-if (!isset($_COOKIE["loggedin"])
-    || !isset($_COOKIE["pozicio"]) || $_COOKIE["pozicio"] == "admin") {
+if (!isset($_SESSION['loggedin']) || $_SESSION['pozicio'] !== 'admin') {
     header("Location: login_admin.php");
     exit;
 }
